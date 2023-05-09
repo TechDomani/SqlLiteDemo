@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <None Update="Carbon.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
