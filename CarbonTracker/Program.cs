@@ -7,10 +7,11 @@ namespace CarbonTracker
     {
         static void Main()
         {
-            var config = new ConfigurationBuilder().AddJsonFile("appSettings.json").Build();
-            string connectionString = config["ConnectionStrings:carbonDb"] ?? string.Empty;
-            Console.WriteLine(connectionString);            
-            CarbonTrackerDb db = new(connectionString);
+
+            const string ConnectionString = @"Data Source=C:\Natalie\GitRepo\C#\CarbonTracker\CarbonTracker.Data\Carbon.db;Mode=ReadWrite";
+
+			Console.WriteLine(ConnectionString);            
+            CarbonTrackerDb db = new(ConnectionString);
 
             var names = db.GetUserNames();
             Console.WriteLine("User Names:");

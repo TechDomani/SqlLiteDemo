@@ -21,11 +21,11 @@ namespace CarbonTracker.Data
                 connection.ConnectionString = _connectionString;
                 connection.Open();
                 SqliteCommand command = connection.CreateCommand();
-                command.CommandText = "Select * from main.users";
+                command.CommandText = "Select name from main.users";
                 var dataReader = command.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    var name = dataReader.GetString(1);
+                    var name = dataReader.GetString(0);
                     names.Add(name);
                 }
             }
